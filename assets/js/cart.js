@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     const cartContent = document.getElementById('cartContent');
-    const SYNC_INTERVAL = 500; // Interval in milliseconds to check for updates
 
     // Fetch product data from products.json
     const fetchProductData = async () => {
@@ -26,19 +25,23 @@ document.addEventListener('DOMContentLoaded', function () {
         let subtotal = 0;
 
         cart.forEach(item => {
+            const product = productMap[item.id] || {};
             const itemTotal = item.price * item.quantity;
             subtotal += itemTotal;
 
             cartContent.innerHTML += `
-                <div class="cart-item" data-id="${product.id}">
-                    <img src="${product.image}" alt="${product.name}" />
+                <div class="cart-item" data-id="${item.id}">
+                    <img src="${product.image || ''}" alt="${product.name || 'Unknown Product'}" />
                     <div class="item-details">
-                        <h2>${product.name}</h2>
-                        <p>₦${product.price.toFixed(2)}</p>
+                        <h2>${product.name || 'Unknown Product'}</h2>
+                        <p>₦${item.price.toFixed(2)}</p>
                         <div class="quantity-controls">
-                            <input type="number" class="quantity-input" min="1" value="${product.quantity}">
+                            <button class="minus-button">-</button>
+                            <input type="number" class="quantity-input" min="1" value="${item.quantity}">
+                            <input type="range" class="quantity-slider" min="1" max="100" value="${item.quantity}">
+                            <button class="plus-button">+</button>
                         </div>
-                        <p>Total: ₦${productTotal.toFixed(2)}</p>
+                        <p>Total: ₦${itemTotal.toFixed(2)}</p>
                         <button class="remove-button">Remove</button>
                     </div>
                 </div>
@@ -78,6 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.quantity-input').forEach(input => {
             input.addEventListener('input', handleQuantityChange);
         });
+
+        document.querySelectorAll('.quantity-slider').forEach(slider => {
+            slider.addEventListener('input', handleSliderChange);
+        });
     };
 
     // Function to handle the plus button click
@@ -106,6 +113,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
+    // Function to handle slider change
+    const handleSliderChange = (event) => {
+        const cartItem = event.target.closest('.cart-item');
+        const itemId = cartItem.getAttribute('data-id');
+        const slider = event.target;
+        const newQuantity = parseInt(slider.value, 10);
+        updateCartItemQuantity(itemId, newQuantity - getCurrentQuantity(itemId));
+    };
+
     // Function to handle remove button click
     const handleRemoveClick = (event) => {
         const cartItem = event.target.closest('.cart-item');
@@ -125,8 +141,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const itemIndex = cart.findIndex(cartItem => cartItem.id === itemId);
         if (itemIndex > -1) {
-            cart[itemIndex].quantity += change;
-            if (cart[itemIndex].quantity <= 0) {
+            const newQuantity = cart[itemIndex].quantity + change;
+            if (newQuantity > 0) {
+                cart[itemIndex].quantity = newQuantity;
+            } else {
                 cart.splice(itemIndex, 1);
             }
             localStorage.setItem('cart', JSON.stringify(cart));
