@@ -3,12 +3,17 @@
 *{
     font-family: "Poppins";
 }
+:root{
+    --1px: calc(1/16);
+    --30px: calc(30/16);
+}
 .product-card {
-    border: 1px solid #ccc;
-    padding: 16px;
-    margin: 16px;
+    border: var(--1px)rem solid #ccc;
+    padding: 1rem;
+    border-radius: var(--30px)rem;
+    margin: 1rem;
     text-align: center;
-    width: 200px;
+    width:  200px;
     display: inline-block;
     position: relative;
 }
