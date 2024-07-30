@@ -29,7 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
         });
 
-        // Add event listeners for buttons and input fields
+        // Attach event listeners to newly created buttons and inputs
+        attachEventListeners();
+    };
+
+    // Function to attach event listeners to buttons and inputs
+    const attachEventListeners = () => {
         document.querySelectorAll('.plus-button').forEach(button => {
             button.addEventListener('click', handlePlusClick);
         });
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         document.querySelectorAll('.quantity-input').forEach(input => {
-            input.addEventListener('change', handleQuantityChange);
+            input.addEventListener('input', handleQuantityChange);
         });
     };
 
