@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "E-Book 1",
+        "description": "An interesting e-book.",
+        "price": 10.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 2,
+        "name": "Theme 1",
+        "description": "A beautiful theme.",
+        "price": 20.00,
+        "image": "https://via.placeholder.com/150"
+    }
+]
