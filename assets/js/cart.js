@@ -129,8 +129,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const itemIndex = cart.findIndex(cartItem => cartItem.id === itemId);
         if (itemIndex > -1) {
-            cart[itemIndex].quantity += change;
-            if (cart[itemIndex].quantity <= 0) {
+            const newQuantity = cart[itemIndex].quantity + change;
+            if (newQuantity > 0) {
+                cart[itemIndex].quantity = newQuantity;
+            } else {
                 cart.splice(itemIndex, 1);
             }
             localStorage.setItem('cart', JSON.stringify(cart));
