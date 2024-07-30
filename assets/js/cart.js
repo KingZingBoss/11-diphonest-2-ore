@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="quantity-controls">
                             <button class="minus-button">-</button>
                             <input type="number" class="quantity-input" min="1" value="${item.quantity}">
+                            <input type="range" class="quantity-slider" min="1" max="100" value="${item.quantity}">
                             <button class="plus-button">+</button>
                         </div>
                         <p>Total: ₦${itemTotal.toFixed(2)}</p>
@@ -68,6 +69,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.quantity-input').forEach(input => {
             input.addEventListener('input', handleQuantityChange);
         });
+
+        document.querySelectorAll('.quantity-slider').forEach(slider => {
+            slider.addEventListener('input', handleSliderChange);
+        });
     };
 
     // Function to handle the plus button click
@@ -94,6 +99,15 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             event.target.value = getCurrentQuantity(itemId); // Revert to the current quantity if invalid
         }
+    };
+
+    // Function to handle slider change
+    const handleSliderChange = (event) => {
+        const cartItem = event.target.closest('.cart-item');
+        const itemId = cartItem.getAttribute('data-id');
+        const slider = event.target;
+        const newQuantity = parseInt(slider.value, 10);
+        updateCartItemQuantity(itemId, newQuantity - getCurrentQuantity(itemId));
     };
 
     // Function to handle remove button click
