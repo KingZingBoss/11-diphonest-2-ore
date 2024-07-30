@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p>$${product.price}</p>
                 <div id="quantityControls">
                     <label for="quantity">Quantity:</label>
-                    <input type="range" id="quantitySlider" min="1" max="10" value="1">
-                    <input type="number" id="quantityInput" min="1" max="10" value="1">
+                    <input type="range" id="quantitySlider" min="1" max="10000" value="1">
+                    <input type="number" id="quantityInput" min="1" max="10000" value="1">
                 </div>
                 <button id="addToCartButton">Add to Cart</button>
             </div>
