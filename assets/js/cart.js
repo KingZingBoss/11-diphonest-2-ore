@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const cartContent = document.getElementById('cartContent');
+    const SYNC_INTERVAL = 500; // Interval in milliseconds to check for updates
 
     // Function to update the cart UI
     const updateCartUI = () => {
@@ -147,6 +148,28 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('cart', JSON.stringify(updatedCart));
         updateCartUI();
     };
+
+    // Function to continuously check and sync input and slider values
+    const syncQuantityControls = () => {
+        const cartItems = document.querySelectorAll('.cart-item');
+        cartItems.forEach(cartItem => {
+            const itemId = cartItem.getAttribute('data-id');
+            const quantityInput = cartItem.querySelector('.quantity-input');
+            const quantitySlider = cartItem.querySelector('.quantity-slider');
+            const currentQuantity = getCurrentQuantity(itemId);
+
+            if (parseInt(quantityInput.value, 10) !== currentQuantity) {
+                quantityInput.value = currentQuantity;
+            }
+
+            if (parseInt(quantitySlider.value, 10) !== currentQuantity) {
+                quantitySlider.value = currentQuantity;
+            }
+        });
+    };
+
+    // Set an interval to sync quantity controls every SYNC_INTERVAL milliseconds
+    setInterval(syncQuantityControls, SYNC_INTERVAL);
 
     // Initial call to update the cart UI
     updateCartUI();
