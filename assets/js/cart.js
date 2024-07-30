@@ -11,23 +11,41 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        let subtotal = 0;
+
         cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
+
             cartContent.innerHTML += `
                 <div class="cart-item" data-id="${item.id}">
                     <img src="${item.image}" alt="${item.name}" />
                     <div class="item-details">
                         <h2>${item.name}</h2>
-                        <p>$${item.price}</p>
+                        <p>$${item.price.toFixed(2)}</p>
                         <div class="quantity-controls">
                             <button class="minus-button">-</button>
                             <input type="number" class="quantity-input" min="1" value="${item.quantity}">
                             <button class="plus-button">+</button>
                         </div>
+                        <p>Total: $${itemTotal.toFixed(2)}</p>
                         <button class="remove-button">Remove</button>
                     </div>
                 </div>
             `;
         });
+
+        // Calculate totals
+        const tax = subtotal * 0.10;
+        const finalTotal = subtotal + tax;
+
+        cartContent.innerHTML += `
+            <div class="cart-totals">
+                <p>Subtotal: $${subtotal.toFixed(2)}</p>
+                <p>Tax (10%): $${tax.toFixed(2)}</p>
+                <p><strong>Final Total: $${finalTotal.toFixed(2)}</strong></p>
+            </div>
+        `;
 
         // Attach event listeners to newly created buttons and inputs
         attachEventListeners();
