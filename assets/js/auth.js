@@ -7,87 +7,75 @@ document.addEventListener('DOMContentLoaded', function () {
     const homeLink = document.getElementById('homeLink');
     const loginLink = document.getElementById('loginLink');
     const dashboardLink = document.getElementById('dashboardLink');
+    const cartLink = document.getElementById('cartLink');
     const logoutButton = document.getElementById('logoutButton');
     const mainContent = document.getElementById('mainContent');
 
-    // Initialize Netlify Identity and check user state
-    const user = window.netlifyIdentity.currentUser();
-    updateAuthUI(user);
+    // Check if user is logged in
+    const checkUser = () => {
+        const user = window.netlifyIdentity.currentUser();
+        updateAuthUI(user);
+    };
 
-    homeLink.addEventListener('click', showHomePage);
-    loginLink.addEventListener('click', showLoginPage);
-    dashboardLink.addEventListener('click', showDashboardPage);
-    logoutButton.addEventListener('click', handleLogout);
+    // Update UI based on user authentication status
+    const updateAuthUI = (user) => {
+        if (user) {
+            loginLink.style.display = 'none';
+            dashboardLink.style.display = 'inline';
+            cartLink.style.display = 'inline';
+            logoutButton.style.display = 'inline';
+            showHomePage();
+        } else {
+            loginLink.style.display = 'inline';
+            dashboardLink.style.display = 'none';
+            cartLink.style.display = 'none';
+            logoutButton.style.display = 'none';
+            showHomePage();
+        }
+    };
 
-    function showHomePage() {
+    // Show Home Page content
+    const showHomePage = () => {
         mainContent.innerHTML = `
             <h1>Welcome to Digital Products</h1>
             <div class="product-list" id="productList"></div>
         `;
         fetchProducts();
-    }
+    };
 
-    function showLoginPage() {
-        mainContent.innerHTML = `
-            <h1>Login</h1>
-            <button id="loginButton">Login with Netlify</button>
-        `;
-        document.getElementById('loginButton').addEventListener('click', handleLogin);
-    }
-
-    function showDashboardPage() {
-        mainContent.innerHTML = `
-            <h1>Dashboard</h1>
-            <div id="userProducts"></div>
-        `;
-        fetchUserProducts();
-    }
-
-    function fetchProducts() {
+    // Fetch and display products on the home page
+    const fetchProducts = () => {
         fetch('products.json')
             .then(response => response.json())
             .then(products => {
                 const productList = document.getElementById('productList');
+                productList.innerHTML = '';
                 products.forEach(product => {
                     productList.innerHTML += `
                         <div class="product-card">
                             <img src="${product.image}" alt="${product.name}" />
                             <h2>${product.name}</h2>
-                            <p>${product.description}</p>
-                            <p>$${product.price}</p>
                             <button onclick="location.href='product.html?id=${product.id}'">View Details</button>
                         </div>
                     `;
                 });
             });
-    }
+    };
 
-    function fetchUserProducts() {
-        // Placeholder function for fetching user-specific products
-        document.getElementById('userProducts').innerHTML = `<p>Feature coming soon!</p>`;
-    }
-
-    function handleLogin() {
+    // Handle login process
+    const handleLogin = () => {
         window.netlifyIdentity.open();
-    }
+    };
 
-    function handleLogout() {
+    // Handle logout process
+    const handleLogout = () => {
         window.netlifyIdentity.logout();
-    }
+    };
 
-    function updateAuthUI(user) {
-        if (user) {
-            loginLink.style.display = 'none';
-            dashboardLink.style.display = 'inline';
-            logoutButton.style.display = 'inline';
-            showDashboardPage();
-        } else {
-            loginLink.style.display = 'inline';
-            dashboardLink.style.display = 'none';
-            logoutButton.style.display = 'none';
-            showHomePage();
-        }
-    }
+    // Event listeners
+    homeLink.addEventListener('click', showHomePage);
+    loginLink.addEventListener('click', handleLogin);
+    logoutButton.addEventListener('click', handleLogout);
 
     // Listen for login and logout events
     window.netlifyIdentity.on('login', user => {
@@ -98,4 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.netlifyIdentity.on('logout', () => {
         updateAuthUI(null);
     });
+
+    // Initial user check
+    checkUser();
 });
