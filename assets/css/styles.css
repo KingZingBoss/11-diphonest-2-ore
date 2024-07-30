@@ -1,5 +1,8 @@
 /* Existing styles... */
-
+@import url("https://bit.ly/4fzd0YD");
+*{
+    font-family: "Poppins";
+}
 .product-card {
     border: 1px solid #ccc;
     padding: 16px;
