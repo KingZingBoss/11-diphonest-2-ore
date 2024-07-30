@@ -36,10 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <h2>${product.name || 'Unknown Product'}</h2>
                         <p>₦${item.price.toFixed(2)}</p>
                         <div class="quantity-controls">
-                            <button class="minus-button">-</button>
-                            <input type="number" class="quantity-input" min="1" value="${item.quantity}">
-                            <input type="range" class="quantity-slider" min="1" max="100" value="${item.quantity}">
-                            <button class="plus-button">+</button>
+                            <input type="number" class="quantity-input" min="${item.quantity}" max="${item.quantity}" readonly value="${item.quantity}">
                         </div>
                         <p>Total: ₦${itemTotal.toFixed(2)}</p>
                         <button class="remove-button">Remove</button>
