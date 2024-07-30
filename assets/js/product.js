@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const mainContent = document.getElementById('mainContent');
 
+    // Get product ID from query string
     const productId = new URLSearchParams(window.location.search).get('id');
 
     const showProductPage = (product) => {
@@ -10,21 +11,33 @@ document.addEventListener('DOMContentLoaded', function () {
                 <h1>${product.name}</h1>
                 <p>${product.description}</p>
                 <p>$${product.price}</p>
-                <div id="quantitySlider">
+                <div id="quantityControls">
                     <label for="quantity">Quantity:</label>
-                    <input type="range" id="quantity" min="1" max="10" value="1">
-                    <span id="quantityValue">1</span>
+                    <input type="range" id="quantitySlider" min="1" max="10" value="1">
+                    <input type="number" id="quantityInput" min="1" max="10" value="1">
                 </div>
                 <button id="addToCartButton">Add to Cart</button>
             </div>
         `;
 
-        const quantityInput = document.getElementById('quantity');
-        const quantityValue = document.getElementById('quantityValue');
-        quantityInput.addEventListener('input', () => {
-            quantityValue.textContent = quantityInput.value;
+        const quantitySlider = document.getElementById('quantitySlider');
+        const quantityInput = document.getElementById('quantityInput');
+
+        // Synchronize slider and input
+        const synchronizeQuantity = (value) => {
+            quantitySlider.value = value;
+            quantityInput.value = value;
+        };
+
+        quantitySlider.addEventListener('input', () => {
+            synchronizeQuantity(quantitySlider.value);
         });
 
+        quantityInput.addEventListener('input', () => {
+            synchronizeQuantity(quantityInput.value);
+        });
+
+        // Add product to cart
         document.getElementById('addToCartButton').addEventListener('click', () => {
             addToCart(product, quantityInput.value);
         });
@@ -49,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Product added to cart!');
     };
 
+    // Fetch product data
     fetch('products.json')
         .then(response => response.json())
         .then(products => {
