@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <img src="${item.image}" alt="${item.name}" />
                     <div class="item-details">
                         <h2>${item.name}</h2>
-                        <p>$${item.price.toFixed(2)}</p>
+                        <p>₦${item.price.toFixed(2)}</p>
                         <div class="quantity-controls">
                             <button class="minus-button">-</button>
                             <input type="number" class="quantity-input" min="1" value="${item.quantity}">
