@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
         });
 
-        // Add event listeners for the newly added elements
+        // Add event listeners for buttons and input fields
         document.querySelectorAll('.plus-button').forEach(button => {
             button.addEventListener('click', handlePlusClick);
         });
@@ -61,13 +61,15 @@ document.addEventListener('DOMContentLoaded', function () {
         updateCartItemQuantity(itemId, -1);
     };
 
-    // Function to handle quantity change input
+    // Function to handle quantity input change
     const handleQuantityChange = (event) => {
         const cartItem = event.target.closest('.cart-item');
         const itemId = cartItem.getAttribute('data-id');
         const newQuantity = parseInt(event.target.value, 10);
         if (newQuantity > 0) {
             updateCartItemQuantity(itemId, newQuantity - getCurrentQuantity(itemId));
+        } else {
+            event.target.value = getCurrentQuantity(itemId); // Revert to the current quantity if invalid
         }
     };
 
