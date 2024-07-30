@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <input type="number" class="quantity-input" min="1" value="${item.quantity}">
                             <button class="plus-button">+</button>
                         </div>
-                        <p>Total: $${itemTotal.toFixed(2)}</p>
+                        <p>Total: ₦${itemTotal.toFixed(2)}</p>
                         <button class="remove-button">Remove</button>
                     </div>
                 </div>
@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         cartContent.innerHTML += `
             <div class="cart-totals">
-                <p>Subtotal: $${subtotal.toFixed(2)}</p>
-                <p>Tax (10%): $${tax.toFixed(2)}</p>
-                <p><strong>Final Total: $${finalTotal.toFixed(2)}</strong></p>
+                <p>Subtotal: ₦${subtotal.toFixed(2)}</p>
+                <p>Tax (10%): ₦${tax.toFixed(2)}</p>
+                <p><strong>Final Total: ₦${finalTotal.toFixed(2)}</strong></p>
             </div>
         `;
 
