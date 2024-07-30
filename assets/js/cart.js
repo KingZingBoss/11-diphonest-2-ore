@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     const cartContent = document.getElementById('cartContent');
-    const SYNC_INTERVAL = 500; // Interval in milliseconds to check for updates
 
     // Function to update the cart UI
     const updateCartUI = () => {
@@ -25,10 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <h2>${item.name}</h2>
                         <p>₦${item.price.toFixed(2)}</p>
                         <div class="quantity-controls">
-                            <button class="minus-button">-</button>
                             <input type="number" class="quantity-input" min="1" value="${item.quantity}">
-                            <input type="range" class="quantity-slider" min="1" max="100" value="${item.quantity}">
-                            <button class="plus-button">+</button>
                         </div>
                         <p>Total: ₦${itemTotal.toFixed(2)}</p>
                         <button class="remove-button">Remove</button>
@@ -70,10 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.quantity-input').forEach(input => {
             input.addEventListener('input', handleQuantityChange);
         });
-
-        document.querySelectorAll('.quantity-slider').forEach(slider => {
-            slider.addEventListener('input', handleSliderChange);
-        });
     };
 
     // Function to handle the plus button click
@@ -102,15 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Function to handle slider change
-    const handleSliderChange = (event) => {
-        const cartItem = event.target.closest('.cart-item');
-        const itemId = cartItem.getAttribute('data-id');
-        const slider = event.target;
-        const newQuantity = parseInt(slider.value, 10);
-        updateCartItemQuantity(itemId, newQuantity - getCurrentQuantity(itemId));
-    };
-
     // Function to handle remove button click
     const handleRemoveClick = (event) => {
         const cartItem = event.target.closest('.cart-item');
@@ -130,10 +113,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const itemIndex = cart.findIndex(cartItem => cartItem.id === itemId);
         if (itemIndex > -1) {
-            const newQuantity = cart[itemIndex].quantity + change;
-            if (newQuantity > 0) {
-                cart[itemIndex].quantity = newQuantity;
-            } else {
+            cart[itemIndex].quantity += change;
+            if (cart[itemIndex].quantity <= 0) {
                 cart.splice(itemIndex, 1);
             }
             localStorage.setItem('cart', JSON.stringify(cart));
@@ -148,28 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('cart', JSON.stringify(updatedCart));
         updateCartUI();
     };
-
-    // Function to continuously check and sync input and slider values
-    const syncQuantityControls = () => {
-        const cartItems = document.querySelectorAll('.cart-item');
-        cartItems.forEach(cartItem => {
-            const itemId = cartItem.getAttribute('data-id');
-            const quantityInput = cartItem.querySelector('.quantity-input');
-            const quantitySlider = cartItem.querySelector('.quantity-slider');
-            const currentQuantity = getCurrentQuantity(itemId);
-
-            if (parseInt(quantityInput.value, 10) !== currentQuantity) {
-                quantityInput.value = currentQuantity;
-            }
-
-            if (parseInt(quantitySlider.value, 10) !== currentQuantity) {
-                quantitySlider.value = currentQuantity;
-            }
-        });
-    };
-
-    // Set an interval to sync quantity controls every SYNC_INTERVAL milliseconds
-    setInterval(syncQuantityControls, SYNC_INTERVAL);
 
     // Initial call to update the cart UI
     updateCartUI();
