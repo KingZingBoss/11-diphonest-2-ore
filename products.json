@@ -19,5 +19,684 @@
         "description": "A beautiful theme.",
         "price": 1300000.00,
         "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 4,
+        "name": "Apple iPhone 14 Pro",
+        "description": "Latest iPhone model.",
+        "price": 99900.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 5,
+        "name": "Google Pixel 7",
+        "description": "Google's latest smartphone.",
+        "price": 65000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 6,
+        "name": "OnePlus 9 Pro",
+        "description": "High performance smartphone.",
+        "price": 55000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 7,
+        "name": "Xiaomi Mi 11 Ultra",
+        "description": "Flagship smartphone with a great camera.",
+        "price": 45000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 8,
+        "name": "Oppo Find X3 Pro",
+        "description": "Smartphone with a stunning design.",
+        "price": 70000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 9,
+        "name": "Sony Xperia 1 III",
+        "description": "Smartphone with a 4K display.",
+        "price": 85000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 10,
+        "name": "Huawei P50 Pro",
+        "description": "Smartphone with excellent photography capabilities.",
+        "price": 60000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 11,
+        "name": "Samsung Galaxy A52",
+        "description": "Affordable smartphone with great features.",
+        "price": 30000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 12,
+        "name": "Apple iPhone SE (2022)",
+        "description": "Compact and powerful iPhone.",
+        "price": 42900.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 13,
+        "name": "Google Pixel 6a",
+        "description": "Affordable Pixel with Google's software.",
+        "price": 35000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 14,
+        "name": "OnePlus Nord N200",
+        "description": "Budget-friendly 5G smartphone.",
+        "price": 25000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 15,
+        "name": "Xiaomi Redmi Note 11",
+        "description": "Great value for money.",
+        "price": 20000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 16,
+        "name": "Oppo Reno 6",
+        "description": "Stylish smartphone with a sleek design.",
+        "price": 32000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 17,
+        "name": "Sony Xperia 5 II",
+        "description": "Compact yet powerful smartphone.",
+        "price": 50000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 18,
+        "name": "Huawei Nova 9",
+        "description": "Smartphone with a great display and camera.",
+        "price": 40000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 19,
+        "name": "Samsung Galaxy Z Fold 3",
+        "description": "Innovative foldable smartphone.",
+        "price": 160000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 20,
+        "name": "Apple iPhone 13 Mini",
+        "description": "Compact and powerful.",
+        "price": 69900.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 21,
+        "name": "Google Pixel 5",
+        "description": "Google's 5G smartphone with great software.",
+        "price": 45000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 22,
+        "name": "OnePlus 8T",
+        "description": "High performance with fast charging.",
+        "price": 50000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 23,
+        "name": "Xiaomi Poco X3 Pro",
+        "description": "Affordable performance.",
+        "price": 28000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 24,
+        "name": "Oppo A54",
+        "description": "Budget-friendly smartphone.",
+        "price": 22000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 25,
+        "name": "Sony Xperia 10 III",
+        "description": "Compact and durable.",
+        "price": 38000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 26,
+        "name": "Huawei P40 Lite",
+        "description": "Affordable smartphone with good features.",
+        "price": 35000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 27,
+        "name": "Samsung Galaxy Note 20",
+        "description": "Stylish smartphone with S Pen.",
+        "price": 70000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 28,
+        "name": "Apple iPhone 12",
+        "description": "Reliable and powerful iPhone.",
+        "price": 79900.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 29,
+        "name": "Google Pixel 4a",
+        "description": "Great software experience.",
+        "price": 40000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 30,
+        "name": "OnePlus Nord",
+        "description": "Affordable 5G smartphone.",
+        "price": 35000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 31,
+        "name": "Xiaomi Mi 11 Lite",
+        "description": "Lightweight and stylish.",
+        "price": 27000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 32,
+        "name": "Oppo A74",
+        "description": "Affordable with decent performance.",
+        "price": 25000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 33,
+        "name": "Sony Xperia 1 II",
+        "description": "Flagship smartphone with high-end features.",
+        "price": 80000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 34,
+        "name": "Huawei Mate 40 Pro",
+        "description": "High-end smartphone with top features.",
+        "price": 90000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 35,
+        "name": "Samsung Galaxy A72",
+        "description": "Mid-range smartphone with great display.",
+        "price": 40000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 36,
+        "name": "Apple iPhone 11 Pro",
+        "description": "Powerful iPhone with triple camera.",
+        "price": 84900.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 37,
+        "name": "Google Pixel 3a",
+        "description": "Affordable with a good camera.",
+        "price": 30000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 38,
+        "name": "OnePlus 7T Pro",
+        "description": "High-end smartphone with fast performance.",
+        "price": 50000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 39,
+        "name": "Xiaomi Redmi Note 10 Pro",
+        "description": "Great value for the price.",
+        "price": 35000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 40,
+        "name": "Oppo Reno 5 Pro",
+        "description": "Smartphone with fast charging.",
+        "price": 45000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 41,
+        "name": "Sony Xperia 10 II",
+        "description": "Budget smartphone with decent features.",
+        "price": 30000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 42,
+        "name": "Huawei P30 Pro",
+        "description": "High-end smartphone with excellent camera.",
+        "price": 70000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 43,
+        "name": "Samsung Galaxy S20 FE",
+        "description": "Affordable flagship smartphone.",
+        "price": 50000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 44,
+        "name": "Apple iPhone XR",
+        "description": "Budget-friendly iPhone with great features.",
+        "price": 62900.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 45,
+        "name": "Google Pixel 5a",
+        "description": "Affordable with great software.",
+        "price": 40000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 46,
+        "name": "OnePlus 9",
+        "description": "Flagship smartphone with excellent performance.",
+        "price": 60000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 47,
+        "name": "Xiaomi Mi Mix 4",
+        "description": "Premium smartphone with high-end features.",
+        "price": 70000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 48,
+        "name": "Oppo Find X2",
+        "description": "Flagship smartphone with fast charging.",
+        "price": 65000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 49,
+        "name": "Sony Xperia 5",
+        "description": "Compact flagship smartphone.",
+        "price": 45000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 50,
+        "name": "Huawei Mate 30 Pro",
+        "description": "High-end smartphone with excellent performance.",
+        "price": 80000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 51,
+        "name": "Samsung Galaxy A32",
+        "description": "Affordable smartphone with decent features.",
+        "price": 25000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 52,
+        "name": "Apple iPhone 8 Plus",
+        "description": "Older model but still powerful.",
+        "price": 50000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 53,
+        "name": "Google Pixel 4",
+        "description": "Good performance with stock Android.",
+        "price": 45000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 54,
+        "name": "OnePlus 7 Pro",
+        "description": "High performance with smooth display.",
+        "price": 55000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 55,
+        "name": "Xiaomi Poco F3",
+        "description": "Affordable flagship performance.",
+        "price": 30000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 56,
+        "name": "Oppo A73",
+        "description": "Affordable smartphone with decent specs.",
+        "price": 22000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 57,
+        "name": "Sony Xperia 10",
+        "description": "Budget smartphone with good features.",
+        "price": 28000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 58,
+        "name": "Huawei P20 Pro",
+        "description": "Flagship with excellent camera.",
+        "price": 60000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 59,
+        "name": "Samsung Galaxy S21",
+        "description": "Latest flagship smartphone.",
+        "price": 70000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 60,
+        "name": "Apple iPhone XS",
+        "description": "High performance iPhone.",
+        "price": 65000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 61,
+        "name": "Google Pixel 3",
+        "description": "Good camera and performance.",
+        "price": 35000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 62,
+        "name": "OnePlus 6T",
+        "description": "Solid performance and battery life.",
+        "price": 40000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 63,
+        "name": "Xiaomi Mi 10",
+        "description": "High performance with great camera.",
+        "price": 50000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 64,
+        "name": "Oppo Reno 2",
+        "description": "Smartphone with impressive features.",
+        "price": 40000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 65,
+        "name": "Sony Xperia XZ2",
+        "description": "Solid performance and design.",
+        "price": 35000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 66,
+        "name": "Huawei Mate 20 Pro",
+        "description": "Excellent camera and performance.",
+        "price": 60000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 67,
+        "name": "Samsung Galaxy A51",
+        "description": "Good all-round smartphone.",
+        "price": 30000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 68,
+        "name": "Apple iPhone 7 Plus",
+        "description": "Reliable performance with a great camera.",
+        "price": 40000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 69,
+        "name": "Google Pixel 2 XL",
+        "description": "Great camera and performance.",
+        "price": 35000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 70,
+        "name": "OnePlus 5T",
+        "description": "Solid performance and display.",
+        "price": 35000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 71,
+        "name": "Xiaomi Redmi Note 9 Pro",
+        "description": "Great performance at a budget price.",
+        "price": 30000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 72,
+        "name": "Oppo A52",
+        "description": "Good value for money.",
+        "price": 25000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 73,
+        "name": "Sony Xperia XZ1",
+        "description": "Solid performance and design.",
+        "price": 30000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 74,
+        "name": "Huawei P10",
+        "description": "Reliable performance with a great camera.",
+        "price": 30000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 75,
+        "name": "Samsung Galaxy Note 10",
+        "description": "Stylish smartphone with S Pen.",
+        "price": 65000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 76,
+        "name": "Apple iPhone 6s Plus",
+        "description": "Reliable older model with decent performance.",
+        "price": 30000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 77,
+        "name": "Google Pixel",
+        "description": "Good camera and software.",
+        "price": 35000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 78,
+        "name": "OnePlus 3T",
+        "description": "Solid performance and battery life.",
+        "price": 30000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 79,
+        "name": "Xiaomi Mi Mix 2",
+        "description": "Affordable flagship performance.",
+        "price": 30000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 80,
+        "name": "Oppo F9 Pro",
+        "description": "Smartphone with a sleek design.",
+        "price": 25000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 81,
+        "name": "Sony Xperia XA2",
+        "description": "Affordable with decent performance.",
+        "price": 25000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 82,
+        "name": "Huawei P9",
+        "description": "Solid performance and camera.",
+        "price": 20000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 83,
+        "name": "Samsung Galaxy J6",
+        "description": "Good budget smartphone.",
+        "price": 15000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 84,
+        "name": "Apple iPhone 5s",
+        "description": "Reliable older model.",
+        "price": 15000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 85,
+        "name": "Google Pixel XL",
+        "description": "Good performance with a great camera.",
+        "price": 25000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 86,
+        "name": "OnePlus 2",
+        "description": "Affordable performance with a great display.",
+        "price": 20000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 87,
+        "name": "Xiaomi Redmi 7",
+        "description": "Budget smartphone with decent performance.",
+        "price": 15000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 88,
+        "name": "Oppo F5",
+        "description": "Good performance at an affordable price.",
+        "price": 15000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 89,
+        "name": "Sony Xperia L1",
+        "description": "Budget-friendly smartphone.",
+        "price": 12000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 90,
+        "name": "Huawei Y7",
+        "description": "Affordable smartphone with good features.",
+        "price": 13000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 91,
+        "name": "Samsung Galaxy A20",
+        "description": "Budget smartphone with decent performance.",
+        "price": 15000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 92,
+        "name": "Apple iPhone 6",
+        "description": "Reliable older model.",
+        "price": 10000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 93,
+        "name": "Google Nexus 5X",
+        "description": "Good performance at a budget price.",
+        "price": 15000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 94,
+        "name": "OnePlus X",
+        "description": "Compact and affordable.",
+        "price": 14000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 95,
+        "name": "Xiaomi Mi A1",
+        "description": "Affordable smartphone with good specs.",
+        "price": 15000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 96,
+        "name": "Oppo A37",
+        "description": "Budget-friendly smartphone.",
+        "price": 12000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 97,
+        "name": "Sony Xperia E5",
+        "description": "Affordable smartphone with decent performance.",
+        "price": 10000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 98,
+        "name": "Huawei Ascend G7",
+        "description": "Budget-friendly smartphone.",
+        "price": 10000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 99,
+        "name": "Samsung Galaxy Core Prime",
+        "description": "Very affordable smartphone.",
+        "price": 8000.00,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 100,
+        "name": "Apple iPhone 4s",
+        "description": "Older model with basic features.",
+        "price": 6000.00,
+        "image": "https://via.placeholder.com/150"
     }
 ]
