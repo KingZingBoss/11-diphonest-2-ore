@@ -23,9 +23,13 @@ nav a {
     font-weight: 400;
     background-color: black;
     color: white;
+    font-size: 1rem;
     border: 1px solid black;
     border-radius: 30px;
     padding: 0.6rem;
+}
+nav button{
+    font-size: 1rem;
 }
 
 nav a:hover {
