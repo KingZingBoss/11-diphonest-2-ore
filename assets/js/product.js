@@ -1,76 +1,71 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const mainContent = document.getElementById('mainContent');
-
-    // Get product ID from query string
     const productId = new URLSearchParams(window.location.search).get('id');
+    const productContainer = document.getElementById('productContainer');
 
-    const showProductPage = (product) => {
-        mainContent.innerHTML = `
-            <div id="productDetail">
-                <img src="${product.image}" alt="${product.name}" />
-                <h1>${product.name}</h1>
-                <p>${product.description}</p>
-                <p>$${product.price}</p>
-                <div id="quantityControls">
-                    <label for="quantity">Quantity:</label>
-                    <input type="range" id="quantitySlider" min="1" max="10000" value="1">
-                    <input type="number" id="quantityInput" min="1" max="10000" value="1">
-                </div>
-                <button id="addToCartButton">Add to Cart</button>
-            </div>
-        `;
-
-        const quantitySlider = document.getElementById('quantitySlider');
-        const quantityInput = document.getElementById('quantityInput');
-
-        // Synchronize slider and input
-        const synchronizeQuantity = (value) => {
-            quantitySlider.value = value;
-            quantityInput.value = value;
-        };
-
-        quantitySlider.addEventListener('input', () => {
-            synchronizeQuantity(quantitySlider.value);
-        });
-
-        quantityInput.addEventListener('input', () => {
-            synchronizeQuantity(quantityInput.value);
-        });
-
-        // Add product to cart
-        document.getElementById('addToCartButton').addEventListener('click', () => {
-            addToCart(product, quantityInput.value);
-        });
-    };
-
-    const addToCart = (product, quantity) => {
-        if (!window.netlifyIdentity.currentUser()) {
-            alert('Please log in to add items to the cart.');
-            return;
-        }
-
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const existingProductIndex = cart.findIndex(item => item.id === product.id);
-
-        if (existingProductIndex > -1) {
-            cart[existingProductIndex].quantity += parseInt(quantity);
-        } else {
-            cart.push({ ...product, quantity: parseInt(quantity) });
-        }
-
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert('Product added to cart!');
-    };
-
-    // Fetch product data
+    // Fetch product data from products.json
     fetch('products.json')
         .then(response => response.json())
         .then(products => {
             const product = products.find(p => p.id == productId);
             if (product) {
-                showProductPage(product);
-            } else {
-                mainContent.innerHTML = '<h1>Product not found</h1>';
+                displayProduct(product);
             }
         });
+
+    function displayProduct(product) {
+        productContainer.innerHTML = `
+            <h1>${product.name}</h1>
+            <img src="${product.image}" alt="${product.name}" />
+            <p>${product.description}</p>
+            <p>₦${product.price.toFixed(2)}</p>
+            <input type="number" id="quantityInput" value="1" min="1">
+            <button id="addToCartButton">Add to Cart</button>
+            <button id="removeFromCartButton" style="display:none;">Remove from Cart</button>
+        `;
+
+        document.getElementById('addToCartButton').addEventListener('click', function () {
+            addToCart(product);
+        });
+
+        document.getElementById('removeFromCartButton').addEventListener('click', function () {
+            removeFromCart(product.id);
+        });
+
+        // Check if the product is already in the cart and show/remove the button accordingly
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const inCart = cart.some(item => item.id === product.id);
+        if (inCart) {
+            document.getElementById('addToCartButton').style.display = 'none';
+            document.getElementById('removeFromCartButton').style.display = 'inline';
+        }
+    }
+
+    function addToCart(product) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingProduct = cart.find(item => item.id === product.id);
+
+        if (existingProduct) {
+            existingProduct.quantity++;
+        } else {
+            cart.push({ ...product, quantity: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartUI();
+    }
+
+    function removeFromCart(productId) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart = cart.filter(item => item.id !== productId);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartUI();
+
+        // Update the button display
+        document.getElementById('addToCartButton').style.display = 'inline';
+        document.getElementById('removeFromCartButton').style.display = 'none';
+    }
+
+    function updateCartUI() {
+        // Optional: Implement a function to update the cart icon or cart page
+    }
 });
