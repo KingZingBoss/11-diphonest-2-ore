@@ -24,17 +24,21 @@ document.addEventListener('DOMContentLoaded', function () {
         const addToCartButton = document.getElementById('addToCartButton');
         const removeFromCartButton = document.getElementById('removeFromCartButton');
 
-        // Check if the product is already in the cart
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const existingProduct = cart.find(item => item.id === product.id);
+        // Function to update button visibility
+        const updateButtonVisibility = () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingProduct = cart.find(item => item.id === product.id);
 
-        if (existingProduct) {
-            addToCartButton.style.display = 'none';
-            removeFromCartButton.style.display = 'inline';
-        } else {
-            addToCartButton.style.display = 'inline';
-            removeFromCartButton.style.display = 'none';
-        }
+            if (existingProduct) {
+                addToCartButton.style.display = 'none';
+                removeFromCartButton.style.display = 'inline';
+            } else {
+                addToCartButton.style.display = 'inline';
+                removeFromCartButton.style.display = 'none';
+            }
+        };
+
+        updateButtonVisibility(); // Check initial button visibility
 
         // Add product to cart
         addToCartButton.addEventListener('click', () => {
@@ -64,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         localStorage.setItem('cart', JSON.stringify(cart));
         alert('Product added to cart!');
-        showProductPage(product); // Update page to show correct button visibility
+        showProductPage(product); // Refresh page to show updated button visibility
     };
 
     const removeFromCart = (productId) => {
@@ -72,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cart = cart.filter(item => item.id !== productId);
         localStorage.setItem('cart', JSON.stringify(cart));
         alert('Product removed from cart!');
-        showProductPage(products.find(p => p.id == productId)); // Update page to show correct button visibility
+        showProductPage(products.find(p => p.id == productId)); // Refresh page to show updated button visibility
     };
 
     // Fetch product data
