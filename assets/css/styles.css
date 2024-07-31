@@ -1,23 +1,38 @@
 /* Existing styles... */
 @import url("https://bit.ly/4fzd0YD");
-*{
+
+* {
     font-family: "Poppins";
     transition: all 0.5s ease-in-out;
 }
-body{
+
+body {
     margin: 1rem;
     padding: 0;
     box-sizing: border-box;
 }
-nav{
+
+nav {
     padding: 2rem;
+    text-align: center;
 }
-nav a{
+
+nav a {
     margin: 10px;
     text-decoration: none;
-    color: black;
     font-weight: 400;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 0.6rem;
 }
+
+nav a:hover {
+    color: black;
+    background-color: white;
+}
+
 .product-card {
     border: 1px solid #ccc;
     padding: 2rem;
@@ -43,17 +58,20 @@ nav a{
 #productDetail {
     margin: 20px;
 }
-button{
+
+button {
     background-color: black;
     color: white;
     border: 1px solid black;
     border-radius: 30px;
     padding: 0.6rem;
 }
-button:hover{
+
+button:hover {
     color: black;
     background-color: white;
 }
+
 #quantitySlider {
     margin: 20px 0;
 }
@@ -88,7 +106,8 @@ button:hover{
     width: 50px;
     text-align: center;
 }
-footer{
+
+footer {
     position: sticky;
     bottom: 0 !important;
     z-index: 1000;
