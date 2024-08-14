@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const showHomePage = () => {
         mainContent.innerHTML = `
-            <h1>Welcome to Digital Products</h1>
+            <h1>Welcome to 11-diphonest-2-ore</h1>
             <div class="product-list" id="productList"></div>
         `;
         fetchProducts();
