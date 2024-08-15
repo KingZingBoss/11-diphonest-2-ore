@@ -23,7 +23,7 @@ Welcome to the Digital Products E-Commerce Platform, a fully functional single-p
 
 ## Demo
 
-Check out the live demo of the project: [Demo Link](#) (Replace with your live demo link)
+Check out the live demo of the project: [Demo Link](11-diphonest2ore.netlify.app)
 
 ## Features
 
